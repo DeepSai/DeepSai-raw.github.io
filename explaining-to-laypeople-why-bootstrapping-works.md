@@ -14,7 +14,7 @@
 避免数学方法的思考，单从直观印象上理解拔靴法是很重要的。
 
 
-## 后记
+## 说明
 翻译自[StackExchange](https://stats.stackexchange.com/questions/26088/explaining-to-laypeople-why-bootstrapping-works)，既不是直译，也不是意译，是以那篇回答为蓝本，译出作者对bootstrapping的理解，算是**灵魂翻译**。
 
 这之前一直有用拔靴法，也感受到了它的惊人之处，但始终不太明白，翻译完之后瞬间感觉清楚多了。
