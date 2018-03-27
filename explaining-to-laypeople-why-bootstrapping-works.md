@@ -5,7 +5,7 @@
 
 假设你想得到总体`population`的某个参数`parameter`但没办法直接获得，所以需要取一个样本来间接估计。现在，你有多少信心 样本的统计值`statistic`接近整体的参数值`parameter`，显然，这取决于总体的结构。一种你可以了解它的途径是不断地从总体中抽样，不断计算其统计值，最终得到这些统计值的分布（从分布中可以了解它的集中趋势和离散程度），也就是抽样分布`sampling distribution`。但这只是理论上的存在，实际中不可能如此获得，所以为了获得抽样分布，要么对其做一些假设，要么从样本中窥探一二。
 
-如果你决定做出假设，比如，假设抽样分布服从正态分布，或者伯努利分布，或者一些其他的分布。从之前抽样分布的实现过程来看，样本的统计值有多接近总体的参数值取决于抽样分布的形状（“有多接近”转化为数学概念即“置信区间”）。从计算机模拟中我们知道，一些抽样分布确实服从正态分布，比如样本均值的抽样分布`sampling distribution of the mean`，样本均数差的抽样分布`sampling distribution of the difference between means`。
+如果你决定做出假设，比如，假设抽样分布服从正态分布，或者伯努利分布，或者一些其他的分布。从之前抽样分布的实现过程来看，样本的统计值有多接近总体的参数值取决于抽样分布的形状（“有多接近”转化为数学概念即“置信区间”）。从[计算机模拟](http://onlinestatbook.com/stat_sim/sampling_dist/index.html)中我们知道，一些抽样分布确实服从正态分布，比如样本均值的抽样分布`sampling distribution of the mean`，样本均数差的抽样分布`sampling distribution of the difference between means`。
 
 如果不想从以上假设入手获得抽样分布，另一方式就是对样本进行抽样模拟。这么做是因为样本也可以看作一个总体，只不过是一个小的不连续的总体而已。对这个样本进行有放回的抽样，就可以模拟出抽样分布的形状。
 
@@ -13,6 +13,8 @@
 
 避免数学方法的思考，单从直观印象上理解拔靴法是很重要的。
 
+## 抽样分布示例
+![](pic/sampling-distribution.png)
 
 ## 说明
 翻译自[StackExchange](https://stats.stackexchange.com/questions/26088/explaining-to-laypeople-why-bootstrapping-works)，既不是直译，也不是意译，是以那篇回答为蓝本，译出作者对bootstrapping的理解，算是**灵魂翻译**。
