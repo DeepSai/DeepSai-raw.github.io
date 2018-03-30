@@ -17,12 +17,12 @@
 ![](pic/sampling-distribution.png)
 
 ## 说明
-翻译自[StackExchange](https://stats.stackexchange.com/questions/26088/explaining-to-laypeople-why-bootstrapping-works)，既不是直译，也不是意译，而是以回答作为蓝本，译出笔者对bootstrapping的理解，算是**灵魂翻译**。
+翻译自[StackExchange](https://stats.stackexchange.com/questions/26088/explaining-to-laypeople-why-bootstrapping-works)，既不是直译，也不是意译，而是以回答作为蓝本，再加上一些个人理解，算是**灵魂翻译**。
 
-这之前一直有用拔靴法，也感受到了它的惊人之处，但始终不太明白，翻译完之后瞬间感觉清楚多了。
+拔靴法自己一直在用，也感受到了它的惊人之处，但始终不太明白，翻译完之后感觉清楚多了。
 
 
-*附原回答：*
+*StackExchange打开较慢的朋友请直接看原回答：*
 > fwiw the medium length version I usually give goes like this:
 
 > You want to ask a question of a population but you can't. So you take a sample and ask the question of it instead. Now, how confident you should be that the sample answer is close to the population answer obviously depends on the structure of population. One way you might learn about this is to take samples from the population again and again, ask them the question, and see how variable the sample answers tended to be. Since this isn't possible you can either make some assumptions about the shape of the population, or you can use the information in the sample you actually have to learn about it.
