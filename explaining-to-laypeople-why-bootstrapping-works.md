@@ -36,6 +36,5 @@
 > For intuition it is important to think about how you could learn about variability by aggregating sampled information that is generated in various ways and on various assumptions. Completely ignoring the possibility of closed form mathematical solutions is important to get clear about this.
 
 
-`灵魂译者：kate`
+`译者：kate`
 
-![](pic/jinse.png)
