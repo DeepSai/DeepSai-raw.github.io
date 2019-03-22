@@ -16,4 +16,4 @@
 	- [垃圾邮件检测器](https://deepsai.github.io/nlp/spam-detector.html)
 
 ## PANDAS 用法总结
-1. [PANDAS 用法总结 01](https://github.com/DeepSai/DeepSai.github.io/pandas/pandas_usage_01.html)
+1. [PANDAS 用法总结 01](https://deepsai.github.io/pandas/pandas_usage_01.html)
