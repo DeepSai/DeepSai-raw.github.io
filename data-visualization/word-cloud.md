@@ -1,5 +1,8 @@
-# 用python实现词云
-## .generate_from_frequencies()方法
+# 词云
+![](wd.jpg)
+## 用python实现词云
+`.generate_from_frequencies()`方法
+
 ```python
 %config InlineBackend.figure_format='retina'
 import matplotlib.pyplot as plt
@@ -39,7 +42,8 @@ plt.show()
 1. /System/Library/Fonts
 2. /Library/Fonts
 
-## .generate()方法
+## 用python实现词云
+`.generate()`方法
 ```python
 corpus = """心湖 雨又风 
         展容颜 相恋 伴浮萍 
