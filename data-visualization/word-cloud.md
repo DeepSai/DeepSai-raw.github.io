@@ -35,6 +35,10 @@ plt.show()
 ```
 ![](wd01.png)
 
+#### tip: mac中的字体路径
+1. /System/Library/Fonts
+2. /Library/Fonts
+
 ## .generate()方法
 ```python
 corpus = """心湖 雨又风 
