@@ -1,8 +1,8 @@
 # 词云
 ![](wd.jpg)
-[js实现](https://bl.ocks.org/jyucsiro/767539a876836e920e38bc80d2031ba7)
+[d3.js实现](https://bl.ocks.org/jyucsiro/767539a876836e920e38bc80d2031ba7)
 ## 用python实现词云
-`.generate_from_frequencies()`方法
+使用`.generate_from_frequencies()`方法。
 
 ```python
 %config InlineBackend.figure_format='retina'
@@ -44,7 +44,7 @@ plt.show()
 2. /Library/Fonts
 
 ## 用python实现词云
-`.generate()`方法
+使用`.generate()`方法。
 ```python
 corpus = """心湖 雨又风 
         展容颜 相恋 伴浮萍 
