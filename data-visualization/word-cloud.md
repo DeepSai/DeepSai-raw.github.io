@@ -1,5 +1,6 @@
 # 词云
 ![](wd.jpg)
+[js实现](https://bl.ocks.org/jyucsiro/767539a876836e920e38bc80d2031ba7)
 ## 用python实现词云
 `.generate_from_frequencies()`方法
 
