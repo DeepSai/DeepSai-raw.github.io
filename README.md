@@ -19,5 +19,9 @@
 1. [PANDAS 用法总结 01](https://deepsai.github.io/pandas/pandas_usage_01.html)
 2. [PANDAS 用法总结 02](https://deepsai.github.io/pandas/pandas_usage_02.html)
 
+## matplotlib 用法总结
+1. [中文显示](https://deepsai.github.io/matplotlib/chinese_problem.html)
+
 ## 数据可视化
 1. [词云](https://deepsai.github.io/data-visualization/word-cloud.html)
+
