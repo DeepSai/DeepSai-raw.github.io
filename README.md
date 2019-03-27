@@ -10,6 +10,7 @@
 	- [垃圾邮件检测器](https://deepsai.github.io/nlp/spam-detector.html)
 
 ## PANDAS 用法总结
+1. [连接数据库](https://deepsai.github.io/pandas/database.html)
 1. [PANDAS 用法总结 01](https://deepsai.github.io/pandas/pandas_usage_01.html)
 2. [PANDAS 用法总结 02](https://deepsai.github.io/pandas/pandas_usage_02.html)
 
@@ -18,6 +19,7 @@
 
 ## 数据可视化
 1. [词云(包括中文显示)](https://deepsai.github.io/data-visualization/word-cloud.html)
+
 
 - [flask](https://deepsai.github.io/web_service/flask_usage.html)
 
