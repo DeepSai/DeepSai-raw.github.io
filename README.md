@@ -17,6 +17,8 @@
 
 ## matplotlib 用法总结
 1. [中文显示问题](https://deepsai.github.io/matplotlib/chinese_problem.html)
+2. [双y轴显示&折线图上标记数值](https://deepsai.github.io/matplotlib/双y轴显示 & 折线图上标记数值.html)
+
 
 ## 数据可视化
 1. [词云(包括中文显示)](https://deepsai.github.io/data-visualization/word-cloud.html)
