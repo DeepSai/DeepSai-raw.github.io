@@ -84,45 +84,45 @@ function DrawCharac() {
 
     var strong_data = [
         {
-            "value": 122,
-            "name": "成就动机",
+            "value": 190,
+            "name": "亲和动机",
             "path": "Accessibility"
         },
         {
-            "value": 74,
+            "value": 108,
             "name": "进取心",
             "path": "Accessibility"
         },
         {
-            "value": 69,
-            "name": "发掘客户需求",
+            "value": 105,
+            "name": "关系维护",
             "path": "Accessibility"
         },
         {
-            "value": 49,
-            "name": "目标导向",
-            "path": "Accessibility"
-        },
-        {
-            "value": 48,
+            "value": 104,
             "name": "关系建立",
+            "path": "Accessibility"
+        },
+        {
+            "value": 98,
+            "name": "发掘客户需求",
             "path": "Accessibility"
         }
     ];
     var weak_data = [
         {
-            "value": 75,
-            "name": "学习意识",
+            "value": 17,
+            "name": "自信",
             "path": "Accessibility"
         },
         {
-            "value": 71,
+            "value": 9,
+            "name": "精力水平",
+            "path": "Accessibility"
+        },
+        {
+            "value": 8,
             "name": "坚韧不拔",
-            "path": "Accessibility"
-        },
-        {
-            "value": 64,
-            "name": "权利动机",
             "path": "Accessibility"
         }
     ];
