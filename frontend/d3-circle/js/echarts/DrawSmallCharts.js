@@ -79,6 +79,9 @@ function DrawCharac() {
     var charac_strong = echarts.init(document.getElementById('characStrong'));
     var charac_weak = echarts.init(document.getElementById('characWeak'));
     // 性格（矩形树图）
+
+
+    
     var strong_data = [
         {
             "value": 122,
