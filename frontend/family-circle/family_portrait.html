@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/frame-style.css" />
+    <link type="text/css" rel="stylesheet" href="css/chord-style.css" />
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/echarts/echarts.js"></script>
+</head>
+
+<body>
+    <div id="bar">[内部参考] xx人才盘点</div>
+    <div id="container">
+        <div id="header">岗位画像（家庭农场服务岗）</div>
+
+
+        <div id="main">
+            <div id="chart"></div>
+
+            <div id="clickerWrapper">
+                <div id="progress"></div>
+                <div id="clicker">生成岗位画像</div>
+            </div>
+        </div>
+
+        <div class="smallChart" id="skill">
+            技能
+        </div>
+        <div class="smallChart" id="quality">
+            素质
+        </div>
+        <div class="smallChart" id="charac">
+            <div id="characStrong">
+                强需要性格
+            </div>
+            <div id="characWeak">
+                弱需要性格
+            </div>
+        </div>
+        <div class="smallChart" id="growth">
+            成长性
+        </div>
+
+    </div>
+
+
+    <script src="js/echarts/DrawSmallCharts.js"></script>
+
+    <script src="js/helperFunctions.js"></script>
+    <script src="js/Draw1.js"></script>
+    <script src="js/Draw2.js"></script>
+    <script src="js/Draw3.js"></script>
+    <script src="js/chordsMain.js"></script>
+
+    <script>
+        DrawSkill();
+        DrawQuality();
+        DrawCharac();
+        DrawGrowth();
+    </script>
+
+
+</body>
+
+</html>

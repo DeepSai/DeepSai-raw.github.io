@@ -176,9 +176,7 @@ var textCenter = svg.append("g")
 	.attr("class", "explanationWrapper");
 
 /*Starting text middle top*/
-// var note = "收集饲料疫苗营销岗位 的人员基础信息, 并由此产生二级维度, 三级维度信息";
-// var note = "饲料疫苗营销岗包括天邦旗下的 饲料板块, 生物制品板块, 生鲜食品板块 负责相关产品的营销及技术服务支持。";
-var note = "饲料疫苗营销岗隶属于饲料板块, 生物制品板块, 生鲜食品板块, 对产品提供销售服务及技术支持"
+var note = "家庭农场服务岗隶属于汉世伟板块, 通过为养殖户提供饲料 疫苗 种畜产品和技术指导 帮助他们提高养殖效率, 降低育肥过程中的病死率, 同时帮助农户进行育肥后的商品猪销售"
 var middleTextTop = textCenter.append("text")
 	.attr("class", "explanation")
 	.attr("text-anchor", "middle")

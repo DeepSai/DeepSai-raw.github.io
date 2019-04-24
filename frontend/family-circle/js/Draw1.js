@@ -13,7 +13,7 @@ function Draw1() {
 	changeTopText(newText = "岗位画像本质上 是一个黑盒模型, 无法完全进行可视化展示",
 		loc = 4 / 2, delayDisappear = 0, delayAppear = 1);
 
-	changeTopText(newText = "该岗位使用了AdaBoost算法, 下面将对重要特征 进行可视化展示",
+	changeTopText(newText = "该岗位使用了增强学习算法, 下面将对重要特征 进行可视化展示",
 		loc = 4 / 2, delayDisappear = 4, delayAppear = 5, finalText = true);
 
 	// remove bottom text
