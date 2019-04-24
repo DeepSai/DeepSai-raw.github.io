@@ -79,6 +79,50 @@ function DrawCharac() {
     var charac_strong = echarts.init(document.getElementById('characStrong'));
     var charac_weak = echarts.init(document.getElementById('characWeak'));
     // 性格（矩形树图）
+    var strong_data = [
+        {
+            "value": 122,
+            "name": "成就动机",
+            "path": "Accessibility"
+        },
+        {
+            "value": 74,
+            "name": "进取心",
+            "path": "Accessibility"
+        },
+        {
+            "value": 69,
+            "name": "发掘客户需求",
+            "path": "Accessibility"
+        },
+        {
+            "value": 49,
+            "name": "目标导向",
+            "path": "Accessibility"
+        },
+        {
+            "value": 48,
+            "name": "关系建立",
+            "path": "Accessibility"
+        }
+    ];
+    var weak_data = [
+        {
+            "value": 75,
+            "name": "学习意识",
+            "path": "Accessibility"
+        },
+        {
+            "value": 71,
+            "name": "坚韧不拔",
+            "path": "Accessibility"
+        },
+        {
+            "value": 64,
+            "name": "权利动机",
+            "path": "Accessibility"
+        }
+    ];
     var option_charac_strong = {
         title: {
             text: '强需要性格',
@@ -97,7 +141,8 @@ function DrawCharac() {
                 data: strong_data
             }
         ]
-    }
+    };
+
     var option_charac_weak = {
         title: {
             text: '弱需要性格',
@@ -120,6 +165,8 @@ function DrawCharac() {
     charac_strong.setOption(option_charac_strong);
     charac_weak.setOption(option_charac_weak);
 };
+
+
 
 function DrawGrowth() {
     var growth = echarts.init(document.getElementById('growth'));
