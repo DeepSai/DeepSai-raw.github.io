@@ -111,18 +111,18 @@ function DrawCharac() {
     ];
     var weak_data = [
         {
-            "value": 17,
-            "name": "自信",
+            "value": 137,
+            "name": "成就动机",
             "path": "Accessibility"
         },
         {
-            "value": 9,
-            "name": "精力水平",
-            "path": "Accessibility"
-        },
-        {
-            "value": 8,
+            "value": 132,
             "name": "坚韧不拔",
+            "path": "Accessibility"
+        },
+        {
+            "value": 99,
+            "name": "学习意识",
             "path": "Accessibility"
         }
     ];

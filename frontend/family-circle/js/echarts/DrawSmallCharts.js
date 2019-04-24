@@ -108,17 +108,17 @@ function DrawCharac() {
     ];
     var weak_data = [
         {
-            "value": 7,
-            "name": "坚韧不拔",
+            "value": 58,
+            "name": "权利动机",
             "path": "Accessibility"
         },
         {
-            "value": 7,
-            "name": "精力水平",
+            "value": 51,
+            "name": "灵活应变",
             "path": "Accessibility"
         },
         {
-            "value": 3,
+            "value": 50,
             "name": "外向",
             "path": "Accessibility"
         }
