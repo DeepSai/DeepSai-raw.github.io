@@ -81,7 +81,7 @@ function DrawCharac() {
     // 性格（矩形树图）
 
 
-    
+
     var strong_data = [
         {
             "value": 122,
@@ -126,16 +126,18 @@ function DrawCharac() {
             "path": "Accessibility"
         }
     ];
+
     var option_charac_strong = {
         title: {
             text: '强需要性格',
         },
         series: [
             {
-                name: 'remove',
+                name: '性格',
                 type: 'treemap',
                 roam: false,
-                visibleMin: 300,
+                breadcrumb: false,
+                // visibleMin: 300,
                 itemStyle: {
                     normal: {
                         borderColor: '#fff'
@@ -145,16 +147,17 @@ function DrawCharac() {
             }
         ]
     };
-
     var option_charac_weak = {
         title: {
             text: '弱需要性格',
         },
         series: [
             {
-                name: 'remove',
+                name: '性格',
                 type: 'treemap',
                 roam: false,
+                breadcrumb: false,
+                height: '40%',
                 // visibleMin: 300,
                 itemStyle: {
                     normal: {
@@ -165,6 +168,7 @@ function DrawCharac() {
             }
         ]
     }
+
     charac_strong.setOption(option_charac_strong);
     charac_weak.setOption(option_charac_weak);
 };
