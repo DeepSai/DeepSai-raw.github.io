@@ -13,10 +13,10 @@ function finalChord() {
 		.style("visibility", "hidden");
 
 	/*Remove texts*/
-	// changeTopText(newText = "",
-	// 	loc = 0, delayDisappear = 0, delayAppear = 1);
-	// changeBottomText(newText = "",
-	// 	loc = 0, delayDisappear = 0, delayAppear = 1);
+	changeTopText(newText = "Done",
+		loc = 2 / 2, delayDisappear = 0, delayAppear = 1);
+	changeBottomText(newText = "",
+		loc = 0, delayDisappear = 0, delayAppear = 1);
 
 	/*Create arcs or show them, depending on the point in the visual*/
 	if (counter <= 4) {
