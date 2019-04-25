@@ -64,13 +64,18 @@
 		
 		#buttonWrapperInner{
 			position: relative;
-			width: 300px;
+			width: 200px;
 			height: 30px;
 			margin: 0 auto;
 		}
 		
-		
-		#skip{
+		.sideButton{
+			display: inline-block;
+			width:80px;
+			cursor: pointer;
+			text-align: center;
+		}
+		/* #skip{
 		  width: 90px;
 		  cursor: pointer;	
 		  float: left;	
@@ -81,7 +86,7 @@
 		  width: 110px;
 		  cursor: pointer;	
 		  float: left;			  
-		}
+		} */
 
 		#link{
 		  width: 100px;

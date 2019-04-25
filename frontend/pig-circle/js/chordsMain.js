@@ -212,6 +212,14 @@ var counter = 1,
 	opacityValueBase = 0.8,
 	opacityValue = 0.4;
 
+/*Reload page*/
+d3.select("#reset")
+	.on("click", function (e) { location.reload(); });
+
+/*Skip to final visual right away*/
+d3.select("#skip")
+	.on("click", finalChord);
+
 /*Order of steps when clicking button*/
 d3.select("#clicker")
 	.on("click", function (e) {
