@@ -6,7 +6,10 @@
     <link type="text/css" rel="stylesheet" href="css/frame-style.css" />
     <link type="text/css" rel="stylesheet" href="css/chord-style.css" />
     <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
     <script src="js/echarts/echarts.js"></script>
+    <script src="js/echarts/ecStat.js"></script>
+    <script src="js/echarts/tmp.js"></script>
 </head>
 
 <body>
@@ -41,6 +44,18 @@
         <div class="smallChart" id="growth">
             成长性
         </div>
+        <div class="smallChart" id="groupCharacter">
+            人群素质
+        </div>
+        <div class="smallChart" id="groupScore">
+            综合得分
+        </div>
+        <div class="bigChart" id="test1">
+            综合得分
+        </div>
+        <div class="bigChart" id="test2">
+            综合得分
+        </div>
 
     </div>
 
@@ -58,7 +73,12 @@
         DrawQuality();
         DrawCharac();
         DrawGrowth();
+        DrawGroupCharacter();
+        DrawGroupScore();
+        DrawTest1();
+        DrawTest2();
     </script>
+
 
 
 </body>

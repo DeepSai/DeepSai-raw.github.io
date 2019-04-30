@@ -83,44 +83,36 @@ function DrawCharac() {
         {
             "value": 92,
             "name": "成就动机",
-            "path": "Accessibility"
         },
         {
             "value": 50,
             "name": "关系维护",
-            "path": "Accessibility"
         },
         {
             "value": 47,
             "name": "发掘客户需求",
-            "path": "Accessibility"
         },
         {
             "value": 45,
             "name": "进取心",
-            "path": "Accessibility"
         },
         {
             "value": 44,
             "name": "成本意识",
-            "path": "Accessibility"
         }
     ];
     var weak_data = [
         {
             "value": 58,
             "name": "权利动机",
-            "path": "Accessibility"
         },
         {
             "value": 51,
             "name": "灵活应变",
-            "path": "Accessibility"
         },
         {
             "value": 50,
             "name": "外向",
-            "path": "Accessibility"
         }
     ];
 
@@ -271,4 +263,365 @@ function DrawGrowth() {
         ]
     };
     growth.setOption(option_growth);
+};
+
+
+function DrawGroupCharacter() {
+    var tmp = echarts.init(document.getElementById('groupCharacter'));
+    tmp.showLoading();
+    // console.log()
+    // $.getJSON('./tmp.json', function (json) {
+    tmp.hideLoading();
+    tmp.setOption(option = {
+        title: {
+            text: '人群素质'
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [
+            {
+                type: 'graph',
+                // layout: 'none',
+                layout: 'circular',
+                // progressiveThreshold: 700,
+                data: json.nodes.map(function (node) {
+                    return {
+                        // x: node.x,
+                        // y: node.y,
+                        id: node.id,
+                        name: node.label,
+                        symbolSize: node.size,
+                        itemStyle: {
+                            normal: {
+                                color: node.color
+                            }
+                        }
+                    };
+                }),
+                edges: json.edges.map(function (edge) {
+                    return {
+                        source: edge.sourceID,
+                        target: edge.targetID
+                    };
+                }),
+                label: {
+                    emphasis: {
+                        position: 'right',
+                        show: true
+                    }
+                },
+                roam: false,
+                focusNodeAdjacency: true,
+                lineStyle: {
+                    normal: {
+                        width: 0.5,
+                        curveness: 0.3,
+                        opacity: 0.7
+                    }
+                }
+            }
+        ]
+    }, true);
+    // });
+
+};
+
+function DrawGroupScore() {
+    // var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
+    // var bins1 = ecStat.histogram(work_personality, 'scott');
+    var bins1 = ecStat.histogram(work_personality);
+    var bins2 = ecStat.histogram(job_ablity);
+    var bins3 = ecStat.histogram(social_motivation);
+    var option = {
+        title: {
+            text: '综合得分',
+            left: 'left',
+            // top: 20
+        },
+        // color: ['rgb(25, 183, 207)'],
+        grid: {
+            left: '3%',
+            right: '3%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'value',
+            name: '得分',
+            nameLocation: 'center',
+            scale: true, //这个一定要设，不然barWidth和bins对应不上
+        }],
+        yAxis: [{
+            type: 'value',
+            name: '个数',
+            nameLocation: 'center'
+        }],
+        legend: {
+            data: ['工作个性', '工作能力', '社会动机']
+        },
+        series: [{
+            name: '社会动机',
+            // type: 'line',
+            type: 'bar',
+            itemStyle: {
+                // color: "#EC1D25"
+                color: 'pink',
+                opacity: .9
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins3.data
+        }, {
+            name: '工作个性',
+            // type: 'line',
+            type: 'bar',
+            itemStyle: {
+                color: '#29b7cd',
+                opacity: .9
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins1.data
+        }, {
+            name: '工作能力',
+            // type: 'line',
+            type: 'bar',
+            itemStyle: {
+                color: 'steelblue',
+                opacity: .9
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins2.data
+        }]
+    };
+    var groupScore = echarts.init(document.getElementById('groupScore'));
+    groupScore.setOption(option);
+};
+
+function DrawTest1() {
+    // var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
+    // var bins1 = ecStat.histogram(work_personality, 'scott');
+    var bins1 = ecStat.histogram(work_personality);
+    var bins2 = ecStat.histogram(job_ablity);
+    var bins3 = ecStat.histogram(social_motivation);
+    var option = {
+        title: {
+            text: '综合得分',
+            left: 'left',
+            // top: 20
+        },
+        // color: ['rgb(25, 183, 207)'],
+        grid: {
+            left: '3%',
+            right: '3%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'value',
+            name: '得分',
+            nameLocation: 'center',
+            scale: true, //这个一定要设，不然barWidth和bins对应不上
+        }],
+        yAxis: [{
+            type: 'value',
+            name: '个数',
+            nameLocation: 'center'
+        }],
+        legend: {
+            data: ['工作个性', '工作能力', '社会动机']
+        },
+        series: [{
+            name: '社会动机',
+            // type: 'line',
+            type: 'bar',
+            itemStyle: {
+                // color: "#EC1D25"
+                color: 'pink',
+                opacity: .9
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins3.data
+        }, {
+            name: '工作个性',
+            // type: 'line',
+            type: 'bar',
+            itemStyle: {
+                color: '#29b7cd',
+                opacity: .9
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins1.data
+        }, {
+            name: '工作能力',
+            // type: 'line',
+            type: 'bar',
+            itemStyle: {
+                color: 'steelblue',
+                opacity: .9
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins2.data
+        }]
+    };
+    var test1 = echarts.init(document.getElementById('test1'));
+    test1.setOption(option);
+};
+
+function DrawTest2() {
+    // var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
+    // var bins1 = ecStat.histogram(work_personality, 'scott');
+    var bins1 = ecStat.histogram(work_personality);
+    var bins2 = ecStat.histogram(job_ablity);
+    var bins3 = ecStat.histogram(social_motivation);
+    var option = {
+        title: {
+            text: '综合得分',
+            left: 'left',
+            // top: 20
+        },
+        // color: ['rgb(25, 183, 207)'],
+        grid: {
+            left: '3%',
+            right: '3%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'value',
+            name: '得分',
+            nameLocation: 'center',
+            scale: true, //这个一定要设，不然barWidth和bins对应不上
+        }],
+        yAxis: [{
+            type: 'value',
+            name: '个数',
+            nameLocation: 'center'
+        }],
+        legend: {
+            data: ['工作个性', '工作能力', '社会动机']
+        },
+        series: [{
+            name: '社会动机',
+            type: 'line',
+            // type: 'bar',
+            itemStyle: {
+                // color: "#EC1D25"
+                color: 'pink',
+                opacity: 1
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins3.data
+        }, {
+            name: '工作个性',
+            type: 'line',
+            // type: 'bar',
+            itemStyle: {
+                color: '#29b7cd',
+                opacity: 1
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins1.data
+        }, {
+            name: '工作能力',
+            type: 'line',
+            // type: 'bar',
+            itemStyle: {
+                color: 'steelblue',
+                opacity: 1
+            },
+            barWidth: '93%',
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         position: 'insideTop',
+            //         formatter: function (params) {
+            //             return params.value[1];
+            //         }
+            //     }
+            // },
+            smooth: true,
+            data: bins2.data
+        }]
+    };
+    var test2 = echarts.init(document.getElementById('test2'));
+    test2.setOption(option);
 };

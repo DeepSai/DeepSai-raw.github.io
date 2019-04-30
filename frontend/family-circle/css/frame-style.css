@@ -54,6 +54,12 @@
             /* border-color: #eee; */
             background-color: #fff;
         }
+        #container .bigChart{
+            margin: 0.8%;
+            width: 98%;
+            height: 600px;
+            background-color: #fff;
+        }
         #container #characStrong{
             display: inline-block;
             width: 100%;
