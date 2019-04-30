@@ -353,7 +353,7 @@ function DrawGroupScore() {
         }],
         yAxis: [{
             type: 'value',
-            name: '个数',
+            name: '人数',
             nameLocation: 'center'
         }],
         legend: {
@@ -453,7 +453,7 @@ function DrawTest1() {
         }],
         yAxis: [{
             type: 'value',
-            name: '个数',
+            name: '人数',
             nameLocation: 'center'
         }],
         legend: {
@@ -553,7 +553,7 @@ function DrawTest2() {
         }],
         yAxis: [{
             type: 'value',
-            name: '个数',
+            name: '人数',
             nameLocation: 'center'
         }],
         legend: {
