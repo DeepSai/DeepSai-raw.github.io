@@ -330,7 +330,7 @@ function DrawGroupScore() {
     // var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
     // var bins1 = ecStat.histogram(work_personality, 'scott');
     var bins1 = ecStat.histogram(work_personality);
-    var bins2 = ecStat.histogram(job_ablity);
+    var bins2 = ecStat.histogram(job_ability);
     var bins3 = ecStat.histogram(social_motivation);
     var option = {
         title: {
@@ -430,7 +430,7 @@ function DrawTest1() {
     // var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
     // var bins1 = ecStat.histogram(work_personality, 'scott');
     var bins1 = ecStat.histogram(work_personality);
-    var bins2 = ecStat.histogram(job_ablity);
+    var bins2 = ecStat.histogram(job_ability);
     var bins3 = ecStat.histogram(social_motivation);
     var option = {
         title: {
@@ -530,7 +530,7 @@ function DrawTest2() {
     // var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
     // var bins1 = ecStat.histogram(work_personality, 'scott');
     var bins1 = ecStat.histogram(work_personality);
-    var bins2 = ecStat.histogram(job_ablity);
+    var bins2 = ecStat.histogram(job_ability);
     var bins3 = ecStat.histogram(social_motivation);
     var option = {
         title: {
