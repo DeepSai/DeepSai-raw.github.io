@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/frame-style.css" />
+    <link type="text/css" rel="stylesheet" href="css/chord-style.css" />
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/echarts/echarts.js"></script>
+    <script src="js/echarts/ecStat.js"></script>
+    <script src="js/echarts/tmp.js"></script>
+</head>
+
+<body>
+    <div id="bar">[内部参考] xx人才盘点</div>
+    <div id="container">
+        <div id="header">其他图表</div>
+
+        <div class="smallChart" id="groupCharacter">
+            人群素质
+        </div>
+        <div class="smallChart" id="groupScore">
+            综合得分
+        </div>
+        <div class="bigChart" id="test1">
+            综合得分
+        </div>
+        <div class="bigChart" id="test2">
+            综合得分
+        </div>
+
+    </div>
+
+
+    <script src="js/echarts/DrawSmallCharts.js"></script>
+
+    <script>
+        DrawGroupCharacter();
+        DrawGroupScore();
+        DrawTest1();
+        DrawTest2();
+    </script>
+
+
+
+</body>
+
+</html>
