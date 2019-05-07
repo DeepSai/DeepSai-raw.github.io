@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="css/frame-style.css" />
     <link type="text/css" rel="stylesheet" href="css/chord-style.css" />
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
     <script src="js/echarts/echarts.js"></script>
     <script src="js/echarts/ecStat.js"></script>
-    <script src="js/echarts/tmp.js"></script>
+    <script src="js/echarts/data.js"></script>
+
 </head>
 
 <body>
@@ -19,8 +20,8 @@
         <div class="smallChart" id="groupCharacter">
             人群素质
         </div>
-        <div class="smallChart" id="groupScore">
-            综合得分
+        <div class="smallChart" id="structer">
+            人才匹配度结构
         </div>
         <div class="bigChart" id="test1">
             综合得分
@@ -29,11 +30,16 @@
             综合得分
         </div>
 
+        <div class="smallChart" id="d3-1">
+        </div>
+
+        <!-- <div class="smallChart" id="d3-2">
+        </div> -->
+
     </div>
 
-
+    <script src="js/d3/jitter.js"></script>
     <script src="js/echarts/DrawSmallCharts.js"></script>
-
     <script>
         DrawGroupCharacter();
         DrawGroupScore();
