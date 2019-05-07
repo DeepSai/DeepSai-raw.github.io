@@ -1,4 +1,4 @@
-function d3_1() {
+function d3_2() {
     var job_match = [0.81, 0.89, 0.85, 0.86, 0.8, 0.89, 0.49, 0.89, 0.89, 0.89, 0.47,
         0.82, 0.89, 0.84, 0.8, 0.89, 0.89, 0.9, 0.83, 0.89, 0.89, 0.89,
         0.89, 0.81, 0.89, 0.89, 0.89, 0.85, 0.87, 0.89, 0.87, 0.9, 0.86,
@@ -62,7 +62,7 @@ function d3_1() {
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    var svg = d3.select("#d3-1")
+    var svg2 = d3.select("#d3-2")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -79,7 +79,7 @@ function d3_1() {
             // .domain([0.62, 1])          // Note that here the Y scale is set manually
             .domain([min, 1])
             .range([height, 0])
-        svg.append("g").call(d3.axisLeft(y))
+        svg2.append("g").call(d3.axisLeft(y))
 
         // Build and Show the X scale. It is a band scale like for a boxplot: each group has an dedicated RANGE on the axis. This range has a length of x.bandwidth
         var x = d3.scaleBand()
@@ -87,7 +87,7 @@ function d3_1() {
             // .domain(["setosa", "versicolor", "virginica"])
             .domain(['匹配度'])
             .padding(0.05)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
-        svg.append("g")
+        svg2.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
 
@@ -129,7 +129,7 @@ function d3_1() {
             .domain([0.24, 1.16])
 
         // Add the shape to this svg!
-        svg
+        svg2
             .selectAll("myViolin")
             .data(sumstat)
             .enter()        // So now we are working group per group
@@ -145,12 +145,13 @@ function d3_1() {
                 .x0(xNum(0))
                 .x1(function (d) { return (xNum(d.length)) })
                 .y(function (d) { return (y(d.x0)) })
-                .curve(d3.curveCatmullRom)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
+                // .curve(d3.curveCatmullRom)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
+                .curve(d3.curveStep)
             )
 
         // Add individual points with jitter
         var jitterWidth = 200;
-        svg
+        svg2
             .selectAll("indPoints")
             .data(data)
             .enter()
@@ -164,4 +165,4 @@ function d3_1() {
 
     })
 };
-d3_1();
+d3_2();
