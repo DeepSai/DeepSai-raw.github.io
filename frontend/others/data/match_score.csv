@@ -1,4 +1,4 @@
-type,match_score
+Species,Sepal_Length
 匹配度,0.81
 匹配度,0.89
 匹配度,0.85
