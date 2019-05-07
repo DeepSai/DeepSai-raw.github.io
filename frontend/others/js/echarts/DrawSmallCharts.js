@@ -70,7 +70,7 @@ function DrawGroupScore() {
     // console.log(arr)
     var option = {
         title: {
-            text: '漏斗图',
+            text: '匹配度结构',
             // subtext: '纯属虚构',
             left: 'left',
             // top: 'bottom'
@@ -306,3 +306,8 @@ function DrawTest2() {
     var test2 = echarts.init(document.getElementById('test2'));
     test2.setOption(option);
 };
+
+DrawGroupCharacter();
+DrawGroupScore();
+DrawTest1();
+DrawTest2();
