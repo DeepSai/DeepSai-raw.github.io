@@ -15,7 +15,7 @@ var svg = d3.select("#d3-1")
 var min = Math.min(job_match),
     max = Math.max(job_match);
 // Read the data and compute summary statistics for each specie
-d3.csv("https://deepsai.github.io/frontend/others/js/d3/score.csv", function (data) {
+d3.csv("js/d3/score.csv", function (data) {
 
     // Build and Show the Y scale
     var y = d3.scaleLinear()
