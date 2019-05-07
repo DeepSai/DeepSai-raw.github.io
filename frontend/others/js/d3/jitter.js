@@ -61,7 +61,7 @@ var min = Math.min(...job_match),
     max = Math.max(...job_match);
 console.log(min, max);
 // Read the data and compute summary statistics for each specie
-d3.csv("https://deepsai.github.io/frontend/others/data/score.csv", function (data) {
+d3.csv("https://deepsai.github.io/frontend/others/data/test.csv", function (data) {
     console.log(data);
 
     // Build and Show the Y scale
