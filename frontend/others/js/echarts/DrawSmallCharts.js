@@ -61,14 +61,13 @@ function DrawGroupCharacter() {
 // 金字塔图
 function DrawGroupScore() {
     var bins = ecStat.histogram(job_match, 'sturges');
-    console.log(bins);
+    // console.log(bins);
     var total = job_match.length
-    // console.log(bins.customData)
     var arr = [];
     for (var i = 0; i < bins.customData.length; i++) {
         arr.push((bins.customData[i][2] / total) * 100)
     }
-    console.log(arr)
+    // console.log(arr)
     var option = {
         title: {
             text: '漏斗图',
