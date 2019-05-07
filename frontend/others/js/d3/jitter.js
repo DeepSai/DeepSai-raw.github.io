@@ -138,7 +138,6 @@ function d3_1() {
             .append("path")
             .datum(function (d) { return (d.value) })     // So now we are working bin per bin
             .style("stroke", "none")
-            // .style("fill", "grey")
             .style("fill", "steelblue")
             // .style("opacity", 0.9)
             .attr("d", d3.area()

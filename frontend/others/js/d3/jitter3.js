@@ -1,4 +1,18 @@
-function d3_2() {
+function kernelDensityEstimator(kernel, X) {
+    return function (V) {
+        return X.map(function (x) {
+            return [x, d3.mean(V, function (v) { return kernel(x - v); })];
+        });
+    };
+}
+
+function kernelEpanechnikov(k) {
+    return function (v) {
+        return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
+    };
+}
+
+function d3_3() {
     var job_match = [0.81, 0.89, 0.85, 0.86, 0.8, 0.89, 0.49, 0.89, 0.89, 0.89, 0.47,
         0.82, 0.89, 0.84, 0.8, 0.89, 0.89, 0.9, 0.83, 0.89, 0.89, 0.89,
         0.89, 0.81, 0.89, 0.89, 0.89, 0.85, 0.87, 0.89, 0.87, 0.9, 0.86,
@@ -163,4 +177,4 @@ function d3_2() {
 
     })
 };
-d3_2();
+d3_3();
