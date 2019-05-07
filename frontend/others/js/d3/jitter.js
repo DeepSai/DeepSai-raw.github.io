@@ -71,8 +71,7 @@ var svg = d3.select("#d3-1")
 
 // Read the data and compute summary statistics for each specie
 d3.csv("https://deepsai.github.io/frontend/others/data/match_score.csv", function (data) {
-    // d3.csv("https://deepsai.github.io/frontend/others/data/score.csv", function (data) {
-    console.log('raw data:', data);
+    // console.log('raw data:', data);
 
     // Build and Show the Y scale
     var y = d3.scaleLinear()
@@ -103,7 +102,7 @@ d3.csv("https://deepsai.github.io/frontend/others/data/match_score.csv", functio
         .rollup(function (d) {   // For each key..
             input = d.map(function (g) { return g.Sepal_Length; })    // Keep the variable called Sepal_Length
             bins = histogram(input)   // And compute the binning on it.
-            console.log(bins);
+            // console.log(bins);
             return (bins)
         })
         .entries(data)
