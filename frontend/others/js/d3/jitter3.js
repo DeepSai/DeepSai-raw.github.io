@@ -1,3 +1,4 @@
+// Function to compute density
 function kernelDensityEstimator(kernel, X) {
     return function (V) {
         return X.map(function (x) {
@@ -11,6 +12,7 @@ function kernelEpanechnikov(k) {
         return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
     };
 }
+
 
 function d3_3() {
     var job_match = [0.81, 0.89, 0.85, 0.86, 0.8, 0.89, 0.49, 0.89, 0.89, 0.89, 0.47,
@@ -68,7 +70,6 @@ function d3_3() {
 
     var min = Math.min(...job_match),
         max = Math.max(...job_match);
-    console.log("min, max:", min, max);
 
     // set the dimensions and margins of the graph
     var margin = { top: 30, right: 30, bottom: 30, left: 30 },
@@ -86,7 +87,6 @@ function d3_3() {
 
     // Read the data and compute summary statistics for each specie
     d3.csv("https://deepsai.github.io/frontend/others/data/match_score.csv", function (data) {
-        // console.log('raw data:', data);
 
         // Build and Show the Y scale
         var y = d3.scaleLinear()
@@ -112,15 +112,37 @@ function d3_3() {
             .value(d => d)
 
         // Compute the binning for each group of the dataset
+        // var sumstat = d3.nest()  // nest function allows to group the calculation per level of a factor
+        //     .key(function (d) { return d.Species; })
+        //     .rollup(function (d) {   // For each key..
+        //         input = d.map(function (g) { return g.Sepal_Length; })    // Keep the variable called Sepal_Length
+        //         bins = histogram(input)   // And compute the binning on it.
+        //         // console.log(bins);
+        //         return (bins)
+        //     })
+        //     .entries(data)
         var sumstat = d3.nest()  // nest function allows to group the calculation per level of a factor
             .key(function (d) { return d.Species; })
             .rollup(function (d) {   // For each key..
                 input = d.map(function (g) { return g.Sepal_Length; })    // Keep the variable called Sepal_Length
                 bins = histogram(input)   // And compute the binning on it.
-                // console.log(bins);
-                return (bins)
+                density = kernelDensityEstimator(kernelEpanechnikov(7), y.ticks(20))(input);
+                // return (bins)
+                console.log("===jitter3===")
+                console.log("bins.length", bins.length);
+                console.log("density.length", density.length);
+                for (var i = 0; i < bins.length; i++) {
+                    var num = bins[i].length;
+                    density[i].push(num);
+                };
+
+                return (density)
             })
             .entries(data)
+
+        var density = kernelDensityEstimator(kernelEpanechnikov(7), y.ticks(20))(input);
+
+
 
         // What is the biggest number of value in a bin? We need it cause this value will have a width of 100% of the bandwidth.
         var maxNum = 0
@@ -143,23 +165,48 @@ function d3_3() {
             .domain([0.24, 1.16])
 
         // Add the shape to this svg!
+        // svg
+        //     .selectAll("myViolin")
+        //     .data(sumstat)
+        //     .enter()        // So now we are working group per group
+        //     .append("g")
+        //     .attr("transform", function (d) { return ("translate(" + x(d.key) + " ,0)") }) // Translation on the right to be at the group position
+        //     .append("path")
+        //     .datum(function (d) { return (d.value) })     // So now we are working bin per bin
+        //     .style("stroke", "none")
+        //     .style("fill", "steelblue")
+        //     .attr("d", d3.area()
+        //         .x0(xNum(0))
+        //         // .x1(function (d) { return (xNum(d.length)) })
+        //         // .y(function (d) { return (y(d.x0)) })
+        //         .x1(function (d) { return (xNum(d[1])) })
+        //         .y(function (d) { return (y(d[0])); })
+        //         .curve(d3.curveCatmullRom)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
+        //         // .curve(d3.curveStep)
+        //     )
+
+        // Compute kernel density estimation
+        // var kde = kernelDensityEstimator(kernelEpanechnikov(5), x.ticks(30))
+        // var density = kde(data.map(function (d) { return d.price; }))
+        // console.log(density);
+
+        // Plot the area
         svg
-            .selectAll("myViolin")
-            .data(sumstat)
-            .enter()        // So now we are working group per group
-            .append("g")
-            .attr("transform", function (d) { return ("translate(" + x(d.key) + " ,0)") }) // Translation on the right to be at the group position
+            // .selectAll("myViolin")
             .append("path")
-            .datum(function (d) { return (d.value) })     // So now we are working bin per bin
-            .style("stroke", "none")
-            .style("fill", "steelblue")
+            .attr("class", "mypath")
+            .datum(density)
+            .attr("fill", "#69b3a2")
+            .attr("opacity", ".8")
+            .attr("stroke", "#000")
+            .attr("stroke-width", 1)
+            .attr("stroke-linejoin", "round")
             .attr("d", d3.area()
+                .curve(d3.curveBasis)
                 .x0(xNum(0))
-                .x1(function (d) { return (xNum(d.length)) })
-                .y(function (d) { return (y(d.x0)) })
-                // .curve(d3.curveCatmullRom)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
-                .curve(d3.curveStep)
-            )
+                .x1(function (d) { return (xNum(d[1])) })
+                .y(function (d) { return (y(d[0])); })
+            );
 
         // Add individual points with jitter
         var jitterWidth = 200;

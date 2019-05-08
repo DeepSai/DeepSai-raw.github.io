@@ -54,7 +54,7 @@ function d3_2() {
 
     var min = Math.min(...job_match),
         max = Math.max(...job_match);
-    console.log("min, max:", min, max);
+    // console.log("min, max:", min, max);
 
     // set the dimensions and margins of the graph
     var margin = { top: 30, right: 30, bottom: 30, left: 30 },

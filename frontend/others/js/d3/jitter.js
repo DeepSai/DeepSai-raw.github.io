@@ -54,7 +54,6 @@ function d3_1() {
 
     var min = Math.min(...job_match),
         max = Math.max(...job_match);
-    console.log("min, max:", min, max);
 
     // set the dimensions and margins of the graph
     var margin = { top: 30, right: 30, bottom: 30, left: 30 },
@@ -72,7 +71,6 @@ function d3_1() {
 
     // Read the data and compute summary statistics for each specie
     d3.csv("https://deepsai.github.io/frontend/others/data/match_score.csv", function (data) {
-        // console.log('raw data:', data);
 
         // Build and Show the Y scale
         var y = d3.scaleLinear()
@@ -103,7 +101,6 @@ function d3_1() {
             .rollup(function (d) {   // For each key..
                 input = d.map(function (g) { return g.Sepal_Length; })    // Keep the variable called Sepal_Length
                 bins = histogram(input)   // And compute the binning on it.
-                // console.log(bins);
                 return (bins)
             })
             .entries(data)
