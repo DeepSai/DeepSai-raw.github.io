@@ -17,7 +17,8 @@ function DrawGroupCharacter() {
                 // force: {
                 //     gravity: 0.01
                 // },
-                layout: 'circular',
+                // layout: 'circular',
+                layout: 'force',
                 data: json.nodes.map(function (node) {
                     var size = node.size;
                     if (size >= 200) {
