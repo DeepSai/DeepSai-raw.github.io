@@ -13,21 +13,31 @@ function DrawGroupCharacter() {
         series: [
             {
                 type: 'graph',
-                // layout: 'none',
+                // layout: 'force',
+                // force: {
+                //     gravity: 0.01
+                // },
                 layout: 'circular',
-                // progressiveThreshold: 700,
                 data: json.nodes.map(function (node) {
+                    var size = node.size;
+                    if (size >= 200) {
+                        size = 200;
+                    }
+                    if (size < 30) {
+                        size = 30;
+                    }
                     return {
                         // x: node.x,
                         // y: node.y,
                         id: node.id,
                         name: node.label,
-                        symbolSize: node.size,
-                        itemStyle: {
-                            normal: {
-                                color: node.color
-                            }
-                        }
+                        // symbolSize: node.size,
+                        symbolSize: size,
+                        // itemStyle: {
+                        //     normal: {
+                        //         color: node.color
+                        //     }
+                        // }
                     };
                 }),
                 edges: json.edges.map(function (edge) {
@@ -36,6 +46,16 @@ function DrawGroupCharacter() {
                         target: edge.targetID
                     };
                 }),
+                itemStyle: {
+                    opacity: 0.7
+                },
+                lineStyle: {
+                    normal: {
+                        width: 0.5,
+                        curveness: 0.3,
+                        opacity: 0.7
+                    }
+                },
                 label: {
                     emphasis: {
                         position: 'right',
@@ -44,13 +64,8 @@ function DrawGroupCharacter() {
                 },
                 roam: false,
                 focusNodeAdjacency: true,
-                lineStyle: {
-                    normal: {
-                        width: 0.5,
-                        curveness: 0.3,
-                        opacity: 0.7
-                    }
-                }
+
+
             }
         ]
     }, true);

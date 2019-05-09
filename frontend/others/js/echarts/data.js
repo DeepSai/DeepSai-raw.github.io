@@ -1,29 +1,329 @@
 var json = {
     "nodes": [{
+        "label": "结果达成",
+        "id": "结果达成",
+        "size": 207
+    }, {
+        "label": "业务视角",
+        "id": "业务视角",
+        "size": 158
+    }, {
+        "label": "客户导向",
+        "id": "客户导向",
+        "size": 528
+    }, {
+        "label": "有效督导",
+        "id": "有效督导",
+        "size": 133
+    }, {
+        "label": "人际影响",
+        "id": "人际影响",
+        "size": 3
+    }, {
+        "label": "积极主动",
+        "id": "积极主动",
+        "size": 76
+    }, {
+        "label": "团队领导力",
+        "id": "团队领导力",
+        "size": 55
+    },
+    // 结果达成
+    {
         "label": "求实进取",
         "id": "求实进取",
-        "size": 40
+        "size": 5
     }, {
-        "label": "危机处理",
-        "id": "危机处理",
+        "label": "市场开拓",
+        "id": "市场开拓",
+        "size": 5
+    }, {
+        "label": "推动创新",
+        "id": "推动创新",
+        "size": 5
+    }, {
+        "label": "关键交易",
+        "id": "关键交易",
+        "size": 5
+    }, {
+        "label": "技术突破",
+        "id": "技术突破",
+        "size": 5
+    }, {
+        "label": "成就动机",
+        "id": "成就动机",
+        "size": 5
+    }, {
+        "label": "进取心",
+        "id": "进取心",
+        "size": 5
+    }, {
+        "label": "目标导向",
+        "id": "目标导向",
+        "size": 5
+    }, {
+        "label": "精力水平",
+        "id": "精力水平",
+        "size": 5
+    },
+    // 业务视角
+    {
+        "label": "演绎思维",
+        "id": "演绎思维",
+        "size": 5
+    }, {
+        "label": "多业态",
+        "id": "多业态",
+        "size": 5
+    }, {
+        "label": "收购兼并",
+        "id": "收购兼并",
+        "size": 5
+    }, {
+        "label": "掩饰性得分",
+        "id": "掩饰性得分",
+        "size": 5
+    }, {
+        "label": "学习意识",
+        "id": "学习意识",
+        "size": 5
+    },
+    // 客户导向
+    {
+        "label": "服务精神",
+        "id": "服务精神",
+        "size": 5
+    }, {
+        "label": "发掘客户需求",
+        "id": "发掘客户需求",
+        "size": 5
+    },
+    // 有效督导
+    {
+        "label": "任务推动",
+        "id": "任务推动",
+        "size": 5
+    }, {
+        "label": "工作经历",
+        "id": "工作经历",
+        "size": 5
+    }, {
+        "label": "权利动机",
+        "id": "权利动机",
+        "size": 5
+    },
+    // 人际影响
+    {
+        "label": "人际影响力",
+        "id": "人际影响力",
+        "size": 5
+    }, {
+        "label": "构建组织",
+        "id": "构建组织",
         "size": 5
     }, {
         "label": "推动变革",
         "id": "推动变革",
         "size": 5
+    },
+    // 积极主动
+    {
+        "label": "主动性",
+        "id": "主动性",
+        "size": 5
+    }, {
+        "label": "危机处理",
+        "id": "危机处理",
+        "size": 5
+    }, {
+        "label": "灵活应变",
+        "id": "灵活应变",
+        "size": 5
+    }, {
+        "label": "积极进取",
+        "id": "积极进取",
+        "size": 5
+    },
+    // 团队领导力
+    {
+        "label": "团队领导",
+        "id": "团队领导",
+        "size": 5
     }
     ],
     "edges": [
+        // 结果达成
         {
-            "sourceID": "危机处理",
+            "sourceID": "结果达成",
             "targetID": "求实进取",
             // "size": 20
         },
         {
-            "sourceID": "推动变革",
-            "targetID": "求实进取",
-            // "size": 20
-        }
+            "sourceID": "结果达成",
+            "targetID": "市场开拓",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "推动创新",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "关键交易",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "技术突破",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "成就动机",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "进取心",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "目标导向",
+        },
+        {
+            "sourceID": "结果达成",
+            "targetID": "精力水平",
+        },
+        // 业务视角
+        {
+            "sourceID": "业务视角",
+            "targetID": "演绎思维",
+        },
+        {
+            "sourceID": "业务视角",
+            "targetID": "演绎思维",
+        },
+        {
+            "sourceID": "业务视角",
+            "targetID": "多业态",
+        },
+        {
+            "sourceID": "业务视角",
+            "targetID": "客观",
+        },
+        {
+            "sourceID": "业务视角",
+            "targetID": "学习意识",
+        },
+        // 客户导向
+        {
+            "sourceID": "客户导向",
+            "targetID": "服务精神",
+        },
+        {
+            "sourceID": "客户导向",
+            "targetID": "发掘客户需求",
+        },
+        // 有效督导
+        {
+            "sourceID": "有效督导",
+            "targetID": "任务推动",
+        },
+        {
+            "sourceID": "有效督导",
+            "targetID": "工作经历",
+        },
+        {
+            "sourceID": "有效督导",
+            "targetID": "权利动机",
+        },
+        {
+            "sourceID": "有效督导",
+            "targetID": "精力水平",
+        },
+        // 人际影响
+        {
+            "sourceID": "人际影响",
+            "targetID": "人际影响力",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "市场开拓",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "构建组织",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "推动创新",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "关键交易",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "推动变革",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "收购兼并",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "权利动机",
+        },
+        {
+            "sourceID": "人际影响",
+            "targetID": "精力水平",
+        },
+        // 积极主动
+        {
+            "sourceID": "积极主动",
+            "targetID": "主动性",
+        },
+        {
+            "sourceID": "积极主动",
+            "targetID": "市场开拓",
+        },
+        {
+            "sourceID": "积极主动",
+            "targetID": "推动创新",
+        },
+        {
+            "sourceID": "积极主动",
+            "targetID": "危机处理",
+        },
+        {
+            "sourceID": "积极主动",
+            "targetID": "收购兼并",
+        },
+        {
+            "sourceID": "积极主动",
+            "targetID": "灵活应变",
+        },
+        {
+            "sourceID": "积极主动",
+            "targetID": "积极进取",
+        },
+        // 团队领导力
+        {
+            "sourceID": "团队领导力",
+            "targetID": "团队领导",
+        },
+        {
+            "sourceID": "团队领导力",
+            "targetID": "工作经历",
+        },
+        {
+            "sourceID": "团队领导力",
+            "targetID": "构建组织",
+        },
+        {
+            "sourceID": "团队领导力",
+            "targetID": "权利动机",
+        },
+        {
+            "sourceID": "团队领导力",
+            "targetID": "积极进取",
+        },
     ]
 };
 

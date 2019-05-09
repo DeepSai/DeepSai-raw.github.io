@@ -85,9 +85,9 @@ function d3_1() {
             // .domain(["setosa", "versicolor", "virginica"])
             .domain(['匹配度'])
             .padding(0.05)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
-        svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x))
+        // svg.append("g")
+        //     .attr("transform", "translate(0," + height + ")")
+        //     .call(d3.axisBottom(x))
 
         // Features of the histogram
         var histogram = d3.histogram()
@@ -145,7 +145,7 @@ function d3_1() {
             )
 
         // Add individual points with jitter
-        var jitterWidth = 200;
+        var jitterWidth = 100;
         svg
             .selectAll("indPoints")
             .data(data)
