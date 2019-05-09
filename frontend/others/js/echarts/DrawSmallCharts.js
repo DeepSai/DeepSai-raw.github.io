@@ -23,8 +23,8 @@ function DrawGroupCharacter() {
                     if (size >= 200) {
                         size = 200;
                     }
-                    if (size < 30) {
-                        size = 30;
+                    if (size < 20) {
+                        size = 20;
                     }
                     return {
                         // x: node.x,
@@ -60,7 +60,145 @@ function DrawGroupCharacter() {
                     emphasis: {
                         position: 'right',
                         show: true
+                    },
+                    // normal: {
+                    //     show: true
+                    // }
+                },
+                roam: false,
+                focusNodeAdjacency: true,
+
+
+            }
+        ]
+    }, true);
+    // });
+
+};
+function DrawGroupCharacter2() {
+    var tmp = echarts.init(document.getElementById('groupCharacter2'));
+    tmp.showLoading();
+    // console.log()
+    // $.getJSON('./tmp.json', function (json) {
+    tmp.hideLoading();
+    tmp.setOption({
+        title: {
+            text: 'NPM Dependencies'
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [
+            {
+                type: 'graph',
+                layout: 'none',
+                // progressiveThreshold: 700,
+                data: data_quality.nodes.map(function (node) {
+                    return {
+                        x: node.x,
+                        y: node.y,
+                        id: node.id,
+                        name: node.label,
+                        symbolSize: node.size,
+                        itemStyle: {
+                            normal: {
+                                color: node.color
+                            }
+                        }
+                    };
+                }),
+                edges: data_quality.edges.map(function (edge) {
+                    return {
+                        source: edge.sourceID,
+                        target: edge.targetID
+                    };
+                }),
+                label: {
+                    emphasis: {
+                        position: 'right',
+                        show: true
                     }
+                },
+                // roam: true,
+                focusNodeAdjacency: true,
+                lineStyle: {
+                    normal: {
+                        width: 0.5,
+                        curveness: 0.3,
+                        opacity: 0.7
+                    }
+                }
+            }
+        ]
+    }, true);
+    // });
+
+};
+function DrawGroupCharacter3() {
+    var tmp = echarts.init(document.getElementById('groupCharacter3'));
+    tmp.showLoading();
+    // console.log()
+    // $.getJSON('./tmp.json', function (json) {
+    tmp.hideLoading();
+    tmp.setOption(option = {
+        title: {
+            text: '人群素质'
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [
+            {
+                type: 'graph',
+                // layout: 'force',
+                // force: {
+                //     gravity: 0.01
+                // },
+                layout: 'circular',
+                data: json.nodes.map(function (node) {
+                    var size = node.size;
+                    if (size >= 200) {
+                        size = 200;
+                    }
+                    if (size < 20) {
+                        size = 20;
+                    }
+                    return {
+                        // x: node.x,
+                        // y: node.y,
+                        id: node.id,
+                        name: node.label,
+                        // symbolSize: node.size,
+                        symbolSize: size,
+                        // itemStyle: {
+                        //     normal: {
+                        //         color: node.color
+                        //     }
+                        // }
+                    };
+                }),
+                edges: json.edges.map(function (edge) {
+                    return {
+                        source: edge.sourceID,
+                        target: edge.targetID
+                    };
+                }),
+                itemStyle: {
+                    opacity: 0.7
+                },
+                lineStyle: {
+                    normal: {
+                        width: 0.5,
+                        curveness: 0.3,
+                        opacity: 0.7
+                    }
+                },
+                label: {
+                    emphasis: {
+                        position: 'right',
+                        show: true
+                    },
+                    // normal: {
+                    //     show: true
+                    // }
                 },
                 roam: false,
                 focusNodeAdjacency: true,
@@ -323,6 +461,8 @@ function DrawTest2() {
 };
 
 DrawGroupCharacter();
+DrawGroupCharacter2();
+DrawGroupCharacter3();
 DrawGroupScore();
 DrawTest1();
 DrawTest2();
