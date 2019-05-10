@@ -18,27 +18,28 @@ function DrawGroupCharacter() {
                 //     gravity: 0.01
                 // },
                 // layout: 'circular',
-                layout: 'force',
+                layout: 'none',
                 data: json.nodes.map(function (node) {
-                    var size = node.size;
+                    var size = node.size * 0.5;
                     if (size >= 200) {
                         size = 200;
                     }
-                    if (size < 20) {
-                        size = 20;
+                    if (size < 10) {
+                        size = 10;
                     }
+                    console.log(size);
                     return {
-                        // x: node.x,
-                        // y: node.y,
+                        x: node.x,
+                        y: node.y,
                         id: node.id,
                         name: node.label,
                         // symbolSize: node.size,
                         symbolSize: size,
-                        // itemStyle: {
-                        //     normal: {
-                        //         color: node.color
-                        //     }
-                        // }
+                        itemStyle: {
+                            normal: {
+                                color: node.color
+                            }
+                        }
                     };
                 }),
                 edges: json.edges.map(function (edge) {
@@ -48,7 +49,7 @@ function DrawGroupCharacter() {
                     };
                 }),
                 itemStyle: {
-                    opacity: 0.7
+                    opacity: 0.9
                 },
                 lineStyle: {
                     normal: {
@@ -84,7 +85,7 @@ function DrawGroupCharacter2() {
     tmp.hideLoading();
     tmp.setOption({
         title: {
-            text: 'NPM Dependencies'
+            text: '效果图'
         },
         animationDurationUpdate: 1500,
         animationEasingUpdate: 'quinticInOut',
