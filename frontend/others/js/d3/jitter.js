@@ -145,7 +145,7 @@ function d3_1() {
             )
 
         // Add individual points with jitter
-        var jitterWidth = 100;
+        var jitterWidth = 200;
         svg
             .selectAll("indPoints")
             .data(data)
