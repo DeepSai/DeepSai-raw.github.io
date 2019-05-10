@@ -20,12 +20,12 @@ function DrawGroupCharacter() {
                 // layout: 'circular',
                 layout: 'none',
                 data: json.nodes.map(function (node) {
-                    var size = node.size * 0.5;
-                    if (size >= 200) {
-                        size = 200;
+                    var size = node.size * 0.4;
+                    if (size >= 150) {
+                        size = 150;
                     }
-                    if (size < 10) {
-                        size = 10;
+                    if (size < 15) {
+                        size = 15;
                     }
                     console.log(size);
                     return {
