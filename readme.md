@@ -1,4 +1,4 @@
-# cc
+# 数据科学
 
 
 ## 文章
@@ -24,7 +24,7 @@
 1. [词云(包括中文显示)](https://deepsai.github.io/data-visualization/word-cloud.html)
 
 
-- [flask](https://deepsai.github.io/web_service/flask_usage.html)
+- [flask微服务](https://deepsai.github.io/web_service/flask_usage.html)
 
 - [家庭农场](https://deepsai.github.io/frontend/family-circle/family_portrait.html)
 - [销售](https://deepsai.github.io/frontend/sale-circle/sale_portrait.html)
